@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/modal.css">
+</head>
+
+<body>
+
+    <button id="modalButton">CSSSript.com</button>
+
+    <div id="modalHead" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h3>CSSSript.com</h3>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate vehicula efficitur. In hac
+                    habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque
+                    ullamcorper ullamcorper congue. Aenean viverra nibh sed mauris consequat vulputate. Integer non
+                    magna lacinia, pretium tortor in, blandit dui. Nullam pretium sem mi, a sodales mauris laoreet
+                    hendrerit. Ut suscipit in velit id vehicula. Nullam vehicula porta felis non blandit. In varius arcu
+                    sed velit ultricies pulvinar. Donec at imperdiet mi. Suspendisse vitae libero pellentesque, finibus
+                    mauris sit amet, egestas lectus. Maecenas sed euismod sem. Nulla accumsan tellus et iaculis
+                    dignissim. Nullam a sollicitudin risus.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-okey">Okey</button>
+                <button class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("modalHead");
+
+        var btn = document.getElementById("modalButton");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            if (event.target == span) {
+                modal.classList.add('fade-out')
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    modal.classList.remove('fade-out')
+                }, 400)
+            }
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.classList.add('fade-out')
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    modal.classList.remove('fade-out')
+                }, 400)
+            }
+        }
+
+        // function outsideClick(e) {
+        //     if (e.target === modal) {
+        //         modal.classList.add('fade-out')
+        //         setTimeout(() => {
+        //             modal.style.display = 'none';
+        //             modal.classList.remove('fade-out')
+        //         }, 300)
+
+        //         if (modal.classList.contains('fade-in')) {
+        //             modal.classList.remove('fade-in');
+        //         }
+        //     }
+        // }
+        // for (let i = 0; i < slide.length; i++) {
+        //     let img = slide[i];
+        //     img.onclick = function (e) {
+        //         modal.style.display = 'block';
+        //         modalImg.src = this.src;
+        //         modal.classList.add('fade-in');
+        //     }
+        // }
+    </script>
+
+</body>
+
+</html>
